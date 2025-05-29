@@ -1,29 +1,31 @@
-import './App.css';
+import "./styles/theme.css";
+import "./styles/global.css";
+import { MyText } from "./components/MyText";
 
-function App() {
+export default function App() {
+  const texts = [
+    {
+      title: "Lorem ipsum dolor",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quos excepturi ea enim odit vel et quia doloremque, nam accusantium eum blanditiis debitis natus inventore laborum magnam ipsum tempore itaque?",
+    },
+    {
+      title: "Quos, voluptatum debitis",
+      text: "Quos, voluptatum debitis, distinctio aut eaque ipsum impedit qui assumenda quis tempore libero voluptates dolore, vel inventore iste? Tempore magnam ut vero!",
+    },
+    {
+      title: "amet consectetur adipisicing",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere sed veritatis officiis atque exercitationem vero sit necessitatibus deserunt, maxime ab expedita repellat impedit aut quae temporibus debitis voluptatem recusandae ratione.",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    //React Fragment
+    <>
+      {texts.map((text, index) => (
+        <MyText key={index} title={`${index + 1}. ${text.title}`}>
+          {text.text}
+        </MyText>
+      ))}
+    </>
   );
-}
-
-export default App;
+};
