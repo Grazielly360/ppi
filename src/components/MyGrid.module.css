@@ -2,7 +2,7 @@
   padding: 3rem;
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30, 1fr));
   grid-template-rows: repeat(auto-fit, min-content);
 }
 
@@ -10,10 +10,10 @@
   height: 20rem;
   background-color: var(--primary-dark);
   color: var(--primary-contrast-light);
-  padding: 1rem;
+  padding: 5rem;
   border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
 }
 
@@ -23,10 +23,10 @@
   grid-template-areas:
     "header1 header1"
     "aside header2"
-    "aside main"
+    "aside left"
     "footer footer";
 
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 9fr;
   grid-template-rows: 10rem 5rem auto 10rem;
 
   @media (max-width: 1200px) {
@@ -42,7 +42,7 @@
 
 .header1 {
   grid-area: header1;
-  background-color: darkslateblue;
+  background-color: rgb(211, 135, 188);
 }
 
 .header2 {
@@ -51,7 +51,7 @@
 }
 
 .aside {
-  grid-area: aside;
+  grid-area: aside1;
   background-color: deeppink;
 
   @media (max-width: 1200px) {
@@ -59,7 +59,25 @@
   }
 }
 
-.footer {
+.aside {
+  grid-area: aside2;
+  background-color: rgb(160, 74, 120);
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.footer1 {
   grid-area: footer;
   background-color: darkslateblue;
+}
+
+.footer2 {
+  grid-area: footer;
+  background-color: rgb(208, 228, 122);
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
